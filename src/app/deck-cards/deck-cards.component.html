@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="row">
+    	<div class="col-xs-12">
+    	Deck Cards
+    	</div>
+	</div>
+    <div class="row">
+        
+        <!-- item -->
+        <div class="col-xs-6 col-sm-3">
+            <div class="thumbnail">
+                <div class="img-wrapper">
+                    <img [src]="delarImg" alt="400">
+                </div>
+                <div class="caption text-center">caption</div><!-- optional -->
+            </div>
+        </div>
+            
+        <!-- item -->
+        <div class="col-xs-6 col-sm-3">
+            <div class="thumbnail">
+                <div class="img-wrapper">
+                    <img [src]="userImg" alt="800" (load)="onLoad()">
+                </div>
+                <br/>
+                <div class="caption text-center" *ngIf="loading">
+                    <button type="button" class="btn btn-primary" *ngIf="remainingflag" (click)="getNextcard('high')">Higher</button>
+                    <button type="button" class="btn btn-primary" *ngIf="remainingflag" (click)="getNextcard('low')">Lower</button>
+
+                	<!--<button class="button" *ngIf="remainingflag" (click)="getNextcard('high')">Higher</button>
+    				<button class="button" *ngIf="remainingflag" (click)="getNextcard('low')">Lower</button>-->
+    				<!--<p *ngIf="!remainingflag"> -->
+                    <div class="alert alert-success" *ngIf="!remainingflag">{{statusmessage}}</div>
+                    <!--<a href="javascript:void(0)"  (click)="tryagaincard()">Try Again</a>-->
+                    <button type="button" class="btn btn-link" *ngIf="!remainingflag" (click)="tryagaincard()">Try Again</button>
+                    <!--</p> -->
+                </div><!-- optional -->
+            </div>
+        </div>
+    </div>
+</div>

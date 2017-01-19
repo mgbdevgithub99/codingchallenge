@@ -1,0 +1,35 @@
+<div class="container">
+<div class="row">
+    <div class="col-xs-12 col-sm-4">
+        <img class="img-responsive pull-left" [src]="'https://image.tmdb.org/t/p/w300_and_h450_bestv2/'+movie.backdrop_path">
+    </div>
+    <div class="col-xs-12 col-sm-8">
+        <div class="row">
+           
+            <div class="col-sm-12">
+            	<h1>{{movie.original_title}}</h1>
+                <p class="pull-right">
+                    {{movie.overview}}
+                </p>
+            </div>
+        </div> 
+    </div>
+    
+    <div class="col-xs-12">
+        <hr />
+    </div>
+
+</div>
+	<div class="row"><div class="col-xs-12">Cast</div></div>
+		<div class="row">
+
+    		<div  *ngFor="let casting of cast" class="col-sm4 spaced-col" >
+    			<a [href]="'https://www.themoviedb.org/person/'+casting.id" target="_blank" 
+    				*ngIf="casting.profile_path != null"
+    				 [title]="casting.character">
+    				<img  width="220" height="220" 
+    				[src]="'https://image.tmdb.org/t/p/w300_and_h450_bestv2'+casting.profile_path" />
+    			</a>	
+    		</div>
+   		</div>
+</div>
