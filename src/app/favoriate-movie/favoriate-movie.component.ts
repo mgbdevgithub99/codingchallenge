@@ -18,7 +18,7 @@ export class FavoriateMovieComponent implements OnInit {
 		
 		this.getfavoritemovie();
 		this.getcasting();
-  	}
+  }
 	getfavoritemovie() {
 		
 		this.FavoriateMovieService.getfavoritemovie().subscribe(
@@ -27,7 +27,7 @@ export class FavoriateMovieComponent implements OnInit {
            		this.movie = movie;
            		console.log(movie);
            }
-        )
+    )
 	}
 
 	getcasting() {
@@ -40,7 +40,6 @@ export class FavoriateMovieComponent implements OnInit {
            		this.cast.profile_path = this.imgUrl+this.cast.profile_path;
            		console.log(this.cast.profile_path);
            }
-        )		
-
-	}
+    )		
+  }
 }

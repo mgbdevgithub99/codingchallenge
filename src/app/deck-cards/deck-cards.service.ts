@@ -6,7 +6,7 @@ import 'rxjs/Rx'
 
 @Injectable()
 export class DeckCardsService {
-	private Url = 'https://deckofcardsapi.com/api/deck/fmnibo3jm8at/draw/?count=2';  // URL to web API
+	private Url = '';
 	private deckUrl = 'https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1';
 	private deckNextcardUrl = '';
  	constructor(private http: Http) { }
@@ -31,7 +31,7 @@ export class DeckCardsService {
   	}
 
   	private handleError (error: Response | any) {
-    	// In a real world app, we might use a remote logging infrastructure
+    	
     	let errMsg: string;
     	if (error instanceof Response) {
       		const body = error.json() || '';
